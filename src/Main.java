@@ -1,5 +1,4 @@
 import com.formdev.flatlaf.FlatDarkLaf;
-import com.formdev.flatlaf.FlatIntelliJLaf;
 
 import javax.swing.*;
 
