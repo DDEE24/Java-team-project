@@ -1,6 +1,8 @@
 import com.formdev.flatlaf.FlatDarkLaf;
 
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
 public class Main {
 

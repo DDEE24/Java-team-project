@@ -1,3 +1,5 @@
+package GeminiAPI;
+
 import okhttp3.*;
 import com.google.gson.*;
 

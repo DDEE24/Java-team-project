@@ -1,27 +1,25 @@
 import javax.swing.*;
-import javax.swing.text.*;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Style;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyledDocument;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import GeminiAPI.GeminiAPI;
 
 public class ChatUI {
-    private JPanel Body;
     private JTextField inputText;
-    private JButton sendButton;
+    private JPanel Body;
     private JTextPane textPane;
+    private JButton sendButton;
 
     public ChatUI() {
-        // ถ้ากด Enter ที่ช่อง input ให้ส่งเหมือนคลิกปุ่ม
-        inputText.addActionListener(e -> sendButton.doClick());
-
-        // เมื่อคลิกปุ่มส่ง
         sendButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String text = inputText.getText().trim();
-                if (text.isEmpty()) return;
-
-                // แสดงข้อความฝั่งผู้ใช้
+                String text = inputText.getText();
+                if(text.isEmpty()) return;
                 appendTitle("User : \n", Color.CYAN);
                 appendWithColor("  " + text + "\n", Color.WHITE);
                 inputText.setText("");
@@ -44,7 +42,6 @@ public class ChatUI {
             }
         });
     }
-
     // ส่ง JPanel หลักออกไปให้ Frame แสดง
     public JPanel getBody() {
         return Body;
